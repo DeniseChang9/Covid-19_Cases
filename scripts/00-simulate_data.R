@@ -6,10 +6,10 @@
 # License: MIT
 
 #### Data Expectations ####
-# Number of clinics matching population density in the city
-# Expect different types of clinics, like city-run, hospital, pharmacy, pop-ups
 # Episode date should be a valid date before today
-# Columns: episode_date, outcome, ever_hospitalized, ever_in_icu
+# ever_hospitalized should only take two possible values: 'yes' or 'no'
+# ever_in_icu should only take two possible values: 'yes' or 'no'
+# Columns: episode_date, ever_hospitalized, ever_in_icu
 
 #### Workspace setup ####
 library(tidyverse)
@@ -17,4 +17,7 @@ library(tidyverse)
 #### Start simulation ####
 
 ## Assumptions
+
+# Fictional COVID-19 cases and related information
+
 
