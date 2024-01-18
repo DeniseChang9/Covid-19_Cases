@@ -37,4 +37,7 @@ clean_covid_data <-
     icu = ever_in_icu
   )
 
-head(clean_covid_data)
+#### Save Data ####
+write_csv(
+  x = clean_covid_data,
+  file = "outputs/data/clean_covid_data.csv")
