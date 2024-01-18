@@ -1,0 +1,40 @@
+---
+title: "COVID-19: More Relevant Than Ever"
+author: "Denise Chang"
+thanks: "Code and data supporting this analysis are available at: LINK."
+date: today
+date-format: long
+abstract: " TBD "
+format: pdf
+number-sections: true
+bibliography: references.bib
+---
+
+```{r}
+#| message: false
+#| echo: false
+
+#### Workspace set-up ####
+library(tidyverse)
+library(knitr)
+library(here)
+
+#### Read cleaned dataset ####
+clean_covid_data <-
+  read_csv(
+    file = here("outputs/data/clean_covid_data.csv"),
+    show_col_types = FALSE
+  )
+```
+
+# Introduction
+
+# Data
+
+# Results
+
+# Discussion
+
+# Conclusion
+
+# References
