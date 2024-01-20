@@ -1,14 +1,17 @@
 ---
-title: "COVID-19: More Relevant Than Ever"
+title: "Decreasing Prevalence of COVID-19 cases in Toronto"
 author: "Denise Chang"
 thanks: "Code and data supporting this analysis are available at: https://github.com/DeniseChang9/Covid-19_Cases.git "
 date: today
 date-format: long
-abstract: "The Coronavirus disease, better known as COVID-19, is an infectious disease that first emerged in 2019, soon resulting in a global pandemic half a year later. This study aims to investigate the trends in COVID-19 cases in the City of Toronto from 2020 to 2023, as well as the severity of each of these cases. Based on the exploration of the number of reported cases, the number of cases who were hospitalized and the number of cases who were sent to the ICU, there is strong evidence "
+abstract: "The coronavirus disease, better known as COVID-19, is an infectious disease that first emerged in 2019, soon resulting in a global pandemic half a year later. This study aims to investigate the trends in COVID-19 cases in the City of Toronto from 2020 to 2023, as well as the severity of each of these cases. Based on the exploration of the number of reported cases, the number of cases who were hospitalized and the number of cases who were sent to the ICU, there is strong evidence support the hypothesis that the coronavirus disease is no longer a major threat to society as is was during the peak of the pandemic. The results of this study is significant, as it impacts the future directions of COVID-19 regulations for businesses, schools and governmental institutions."
 format: pdf
 number-sections: true
 bibliography: references.bib
 ---
+
+# Introduction
+The coronavirus disease, also commonly referred to as COVID-19, is a contagious disease which first emerged in late 2019 [@PHO_def]. Due to the scale of this coronavirus outbreak, the World's Health Organization (WHO) declared it to be a global pandemic on March 11th 2020 and urged the global leaders to begin a response plan, inluding but not limiting to public health restrictions [@WHO_pandemic].
 
 ```{r}
 #| message: false
@@ -27,7 +30,6 @@ clean_covid_data <-
   )
 ```
 
-# Introduction
 
 # Data
 
