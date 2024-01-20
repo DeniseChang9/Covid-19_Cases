@@ -10,6 +10,7 @@
 #### Workspace setup #### 
 library(tidyverse)
 library(opendatatoronto)
+library(arrow)
 
 #### Download data ####
 raw_covid_data <-
@@ -19,7 +20,7 @@ raw_covid_data <-
   get_resource()
 
 #### Save data ####
-write_csv(
+write_parquet(
   x = raw_covid_data,
-  file = "inputs/data/raw_covid_data.csv"
+  sink = "inputs/data/raw_covid_data.parquet"
 )
