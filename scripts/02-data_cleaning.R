@@ -9,14 +9,14 @@
 #### Workspace setup ####
 library(tidyverse)
 library(janitor)
+library(arrow)
 
 #### Clean data ####
 
 # read in the raw data
 raw_covid_data <- 
-  read_csv(
-    file = "inputs/data/raw_covid_data.csv", 
-    show_col_types = FALSE
+  read_parquet(
+    file = "inputs/data/raw_covid_data.parquet", 
     )
 
 clean_covid_data <-
@@ -24,12 +24,10 @@ clean_covid_data <-
   clean_names(raw_covid_data)|>
   # select columns of interest
   select(episode_date, ever_hospitalized, ever_in_icu) |>
+  # keeps year and month of cases
+  mutate(episode_date = str_sub(episode_date, start = 1, end = 7)) |>
   # remove any 2024 data
-  filter(episode_date <= "2023-12-31") |>
-  # eliminate date data
-  mutate(
-    episode_date = format(episode_date, "%Y-%m")
-  ) |>
+  filter(episode_date <= "2023-12") |>
   # rename column headings
   rename(
     date = episode_date, 
@@ -38,6 +36,6 @@ clean_covid_data <-
   )
 
 #### Save Data ####
-write_csv(
+write_parquet(
   x = clean_covid_data,
-  file = "outputs/data/clean_covid_data.csv")
+  sink = "outputs/data/clean_covid_data.parquet")
