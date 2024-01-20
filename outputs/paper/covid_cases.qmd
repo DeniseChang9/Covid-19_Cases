@@ -1,10 +1,10 @@
 ---
 title: "COVID-19: More Relevant Than Ever"
 author: "Denise Chang"
-thanks: "Code and data supporting this analysis are available at: LINK."
+thanks: "Code and data supporting this analysis are available at: https://github.com/DeniseChang9/Covid-19_Cases.git "
 date: today
 date-format: long
-abstract: " TBD "
+abstract: "The Coronavirus disease, better known as COVID-19, is an infectious disease that first emerged in 2019, soon resulting in a global pandemic half a year later. This study aims to investigate the trends in COVID-19 cases in the City of Toronto from 2020 to 2023, as well as the severity of each of these cases. Based on the exploration of the number of reported cases, the number of cases who were hospitalized and the number of cases who were sent to the ICU, there is strong evidence "
 format: pdf
 number-sections: true
 bibliography: references.bib
@@ -18,12 +18,12 @@ bibliography: references.bib
 library(tidyverse)
 library(knitr)
 library(here)
+library(arrow)
 
 #### Read cleaned dataset ####
 clean_covid_data <-
-  read_csv(
-    file = here("outputs/data/clean_covid_data.csv"),
-    show_col_types = FALSE
+  read_parquet(
+    file = here("outputs/data/clean_covid_data.parquet"),
   )
 ```
 
