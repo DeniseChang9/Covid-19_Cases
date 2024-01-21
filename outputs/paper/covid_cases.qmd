@@ -39,7 +39,7 @@ clean_covid_data <-
 In this section I will present the acquisition method of the data, the variables of interest for this analysis as well as the method of data processing. 
 
 ## Data Collection
-The data used in this paper is retrieved from the City of Toronto Open Data Portal through the R package `opendatatoronto` [@opendatatoronto]. The downloaded data set is titled "COVID-19 Cases in Toronto". Starting from the first reported case in January 2020, the data uses 13 variables to capture demographic, geographic and severity information about the cases reported to and managed by Toronto Public Health. The data is extracted on a bi-weekly basis from the provincial Case & Contact Management System (CCM) to keep the reports accurate and relevant to the present.
+The data used in this paper is retrieved from the City of Toronto Open Data Portal through the R package `opendatatoronto` [@opendatatoronto]. The downloaded dataset is titled "COVID-19 Cases in Toronto". Starting from the first reported case in January 2020, the data uses 13 variables to capture demographic, geographic and severity information about the cases reported to and managed by Toronto Public Health. The data is extracted on a bi-weekly basis from the provincial Case & Contact Management System (CCM) to keep the reports accurate and relevant to the present.
 
 The data used for this paper was retrieved on January 20 2024, and was last refreshed on January 17 2024. 
 
@@ -52,9 +52,16 @@ To estimate the severity of the cases, I am interested in the number of confirme
 
 Another possible variable from the same dataset that could have been used to estimate the severity of the reported cases is the number of patients who has been intubated during their episode. This variable was not considered for this analysis as intubation is a mandatory step for patients sent to the ICU. As this variable is already captures by another variable of interest, it was omitted for the purpose of this paper.  
 
-
-
 ## Data Processing
+(announce the libraries)
+clean data => how did I clean them
+summarized data => how did I summarize them for graphs. 
+
+Graphs:
+(GRAPH for nb)
+(how did I compile nb)
+
+(GRAPH 2 broken lines in same for hosp + cu)
 
 # Results
 
