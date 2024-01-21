@@ -15,7 +15,7 @@ The coronavirus disease, also commonly referred to as COVID-19, is a contagious 
 
 One of the ways to evaluate the safety of lifting COVID-19 regulations as well as its effectiveness would be to look at the number of cases of COVID-19 and the severity of each case for the years surrounding the loosening of regulations. In this paper I take a particular interest in the data surrounding the reported cases of COVID-19 in the city of Toronto from 2020 to 2023. I estimate the transmission rate of the disease during the pandemic by evaluating the number of cases reported by month. The severity of each case is evaluated by compiling the number of patients who were hospitalized and sent to the intensive care unit (ICU) during their confirmed episode of sickness. (I find that the number of reported COVID-19 cases were already decreasing by the time Ontario announced they would lift all COVID-19 related regulations, and that the cases kept decreasing after they were lifted. The severity of the cases, however rose after the regulations were lifted.)?
 
-
+The remainder of this paper is structured in four subsequent sections. Section 2 discusses the data source used for analysis and the cleaning of the data. Section 3 will discuss the results of the study including the trends found by exploring the cleaned data set. Section 4 provides further insights on the findings of the study and will discuss the weaknesses of limitations of this analysis. Finally section 5 concludes the analysis by presenting a summary of the main findings discussed throughout this paper. 
 
 ```{r}
 #| message: false
