@@ -11,7 +11,9 @@ bibliography: references.bib
 ---
 
 # Introduction
-The coronavirus disease, also commonly referred to as COVID-19, is a contagious disease which first emerged in late 2019 [@PHO]. Due to the scale of the coronavirus outbreak and its rapid international transmission rate, the World's Health Organization (WHO) characterized it to be a global pandemic and a public health emergency of international on concern (PHEIC) on March 11th 2020 [@WHO]. This statement urged national leaders to begin formulating a response plan, inluding but not limited to masking restrictions, mandatory vaccination policies and quarantines to limit the spread of the virus. However, in early 2022, despite the ongoing PHEIC, the province of Ontario announced they would lift all COVID-19 related by the end of April 2022 [@CTV].
+The coronavirus disease, also commonly referred to as COVID-19, is a contagious disease which first emerged in late 2019 [@PHO]. Due to the scale of the coronavirus outbreak and its rapid international transmission rate, the World's Health Organization (WHO) characterized it to be a global pandemic and a public health emergency of international on concern (PHEIC) on March 11th 2020 [@WHO]. This statement urged national leaders to begin formulating a response plan, including but not limited to masking restrictions and mandatory vaccination policies to limit the spread of the virus. However, in early 2022, despite the ongoing PHEIC, the province of Ontario announced they would lift all COVID-19 related by the end of April 2022 [@CTV]. This announcement was welcomed with sceptism as the public was still not convinced about the safety of lifting these regulations [@CBC].
+
+
 
 ```{r}
 #| message: false
