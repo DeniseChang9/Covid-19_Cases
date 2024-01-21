@@ -36,6 +36,25 @@ clean_covid_data <-
 
 
 # Data
+In this section I will present the acquisition method of the data, the variables of interest for this analysis as well as the method of data processing. 
+
+## Data Collection
+The data used in this paper is retrieved from the City of Toronto Open Data Portal through the R package `opendatatoronto` [@opendatatoronto]. The downloaded data set is titled "COVID-19 Cases in Toronto". Starting from the first reported case in January 2020, the data uses 13 variables to capture demographic, geographic and severity information about the cases reported to and managed by Toronto Public Health. The data is extracted on a bi-weekly basis from the provincial Case & Contact Management System (CCM) to keep the reports accurate and relevant to the present.
+
+The data used for this paper was retrieved on January 20 2024, and was last refreshed on January 17 2024. 
+
+## Variables of Interest
+For this analysis the variables of interests are the number of reported COVID-19 cases in Toronto, the number of patients who had been hospitalized for a reason related to their sickness, and the number of patients who had been to the ICU for their sickness. These three variables are used to evaluate the transmission rate and the severity of the disease of each month in the studied years. 
+
+To evaluate the transmission rate of the virus, the variable of interest I compiled the number of reported cases of COVID-19 per month from January 2020 to December 2023. This variable captures both confirmed cases and probably cases due to reasonable suspicion. 
+
+To estimate the severity of the cases, I am interested in the number of confirmed patients who has been hospitalized for reasons related to the coronavirus disease and the number of patients who were admitted to the ICU for the same reasons. Both of these variables includes those who are currently hospitalized, those who have been discharged and those who are deceased. 
+
+Another possible variable from the same dataset that could have been used to estimate the severity of the reported cases is the number of patients who has been intubated during their episode. This variable was not considered for this analysis as intubation is a mandatory step for patients sent to the ICU. As this variable is already captures by another variable of interest, it was omitted for the purpose of this paper.  
+
+
+
+## Data Processing
 
 # Results
 
