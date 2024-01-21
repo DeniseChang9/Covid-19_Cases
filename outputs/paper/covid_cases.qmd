@@ -1,5 +1,5 @@
 ---
-title: "Decreasing Prevalence of COVID-19 cases in Toronto"
+title: "Decreasing Prevalence of COVID-19 Cases in Toronto"
 author: "Denise Chang"
 thanks: "Code and data supporting this analysis are available at: https://github.com/DeniseChang9/Covid-19_Cases.git "
 date: today
@@ -11,7 +11,7 @@ bibliography: references.bib
 ---
 
 # Introduction
-The coronavirus disease, also commonly referred to as COVID-19, is a contagious disease which first emerged in late 2019 [@PHO_def]. Due to the scale of this coronavirus outbreak, the World's Health Organization (WHO) declared it to be a global pandemic on March 11th 2020 and urged the global leaders to begin a response plan, inluding but not limiting to public health restrictions [@WHO_pandemic].
+The coronavirus disease, also commonly referred to as COVID-19, is a contagious disease which first emerged in late 2019 [@PHO]. Due to the scale of the coronavirus outbreak and its rapid international transmission rate, the World's Health Organization (WHO) characterized it to be a global pandemic and a public health emergency of international on concern (PHEIC) on March 11th 2020 [@WHO]. This statement urged national leaders to begin formulating a response plan, inluding but not limited to masking restrictions, mandatory vaccination policies and quarantines to limit the spread of the virus. However, in early 2022, despite the ongoing PHEIC, the province of Ontario announced they would lift all COVID-19 related by the end of April 2022 [@CTV].
 
 ```{r}
 #| message: false
