@@ -50,7 +50,7 @@ To evaluate the transmission rate of the virus, the variable of interest I compi
 
 To estimate the severity of the cases, I am interested in the number of confirmed patients who has been hospitalized for reasons related to the coronavirus disease and the number of patients who were admitted to the ICU for the same reasons. Both of these variables includes those who are currently hospitalized, those who have been discharged and those who are deceased. 
 
-Another possible variable from the same dataset that could have been used to estimate the severity of the reported cases is the number of patients who has been intubated during their episode. This variable was not considered for this analysis as intubation is a mandatory step for patients sent to the ICU. As this variable is already captures by another variable of interest, it was omitted for the purpose of this paper.  
+Another possible variable from the same dataset that could have been used to estimate the severity of the reported cases is the number of patients who has been intubated during their episode. This variable was not considered for this analysis as intubation is a mandatory step for patients sent to the ICU. As this variable is already captured by another variable of interest, it was omitted for the purpose of this paper.  
 
 ## Data Processing
 The data was cleaned and processed using the statistical programming language R [@R]. Statistical libraries such as `tidyverse` [@tidyverse], `opendatatoronto` [@opendatatoronto], `arrow` [@arrow], `janitor` [@janitor], `knitr` [@knitr] and `here` [@here] are leveraged in the data processing as well. 
@@ -93,15 +93,13 @@ clean_numbers_data |>
   theme_minimal() +
   # rename axis
   labs(
-    x = "Date", 
+    x = "Date (YYYY-MM)", 
     y = "Number of Report Cases of COVID-19") +
   # make the x axis more readable
   scale_x_discrete(breaks = c("2020-01", "2021-01", "2022-01", "2023-01"))
 
 ```
-Figure 1 shows the evolution of the number of COVID-19 related cases reported as the months and years pass. The most noticeable point about this figure is the high spike in cases in December 2021 and January 2022. By plotting the number of cases reported by month, I get a better grasp on the trends within a year. For example in 2021 the number of cases reported is slightly larger than the number of cases reported in 2022, but the 2021 segment of the graph is much more polarized and shows more variations than the 2022 segment. An interesting point to note would be that the number of cases reported in 2023 respects a consistent trend which suggests it will likely decrease or stagnate in 2024. 
-
-=> for future me: should this be put in results section and data explaining more why I did graph like this?
+Figure 1 shows the evolution of the number of COVID-19 related cases reported as the months and years pass. By plotting the number of cases reported by month, I get a better grasp on the trends within a year. For example in 2021 the number of cases reported is slightly larger than the number of cases reported in 2022, but the 2021 segment of the graph is much more polarized and shows more variations than the 2022 segment. For readability purposes the horizontal axis has been broken down to yearly labels instead of monthly labels.
 
 ```{r}
 #| echo: false
@@ -128,13 +126,14 @@ clean_severity_data |>
   # neater theme
   theme_minimal() +
   # modify axis labels and legend title
-  labs(x = "Date", y = "Number of reported cases", colour = "Severity Variable") + 
+  labs(x = "Date (YYYY-MM)", y = "Number of reported cases", colour = "Severity Variable") + 
   # add legend
   theme(legend.position = "bottom") +
   # make the x axis more readable
   scale_x_discrete(breaks = c("2020-01", "2021-01", "2022-01", "2023-01"))
 ```
 
+Figure 2 shows the trends in the severity variables relative the the reported episode date. The horizontal axis is the reported episode date of the cases, consistent with the horizontal axis in Figure 1. Considering that the hospitalization of a patient is a intermediate step before sending them to the ICU, it is reasonable to merge both variables on the same figure. The data is consistent with this assumption as every data point representing a monthly hospitalization count is greater or equal to the corresponding data point representing the monthly ICU count. 
 
 # Results
 
