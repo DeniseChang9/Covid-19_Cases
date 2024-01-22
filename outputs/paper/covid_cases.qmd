@@ -53,15 +53,88 @@ To estimate the severity of the cases, I am interested in the number of confirme
 Another possible variable from the same dataset that could have been used to estimate the severity of the reported cases is the number of patients who has been intubated during their episode. This variable was not considered for this analysis as intubation is a mandatory step for patients sent to the ICU. As this variable is already captures by another variable of interest, it was omitted for the purpose of this paper.  
 
 ## Data Processing
-(announce the libraries)
-clean data => how did I clean them
-summarized data => how did I summarize them for graphs. 
+The data was cleaned and processed using the statistical programming language R [@R]. Statistical libraries such as `tidyverse` [@tidyverse], `opendatatoronto` [@opendatatoronto], `arrow` [@arrow], `janitor` [@janitor], `knitr` [@knitr] and `here` [@here] are leveraged in the data processing as well. 
 
-Graphs:
-(GRAPH for nb)
-(how did I compile nb)
+```{r}
+#| echo: false
+#| message: false
+#| label: tbl-cleaned_covid_data
+#| tbl-cap: Sample of Cleaned COVID-19 Cases Data
 
-(GRAPH 2 broken lines in same for hosp + cu)
+head(clean_covid_data) |>
+  kable(
+    col.names = c("Date of Episode", 
+                  "Hospitalization", 
+                  "Intensive Care Unit (ICU)")
+  )
+```
+
+Table 1 shows a sample of the cleaned data of COVID-19 cases. Each row represents a reported case of coronavirus disease in Toronto from January 2020 (2020-01 in the cleaned data) to December 2023 (2023-12 in the cleaned data). Data from 2024 was omitted, as the year is currently ongoing and not representative of the trends. From the raw data only the columns of interest were chosen to evaluate severity of each case. 
+
+
+```{r}
+#| echo: false
+#| message: false
+#| label: fig-cleaned_number_data
+#| fig-cap: Number of reported COVID-19 cases by month from 2020 to 2023 in Toronto
+
+# counts the number of cases per month
+clean_numbers_data <-
+  clean_covid_data |>
+  group_by(date) |>
+  count(date)
+
+# plots graph
+clean_numbers_data |>
+  ggplot(aes(x = date, y = n)) +
+  # point graph
+  geom_point() +
+  # neater theme
+  theme_minimal() +
+  # rename axis
+  labs(
+    x = "Date", 
+    y = "Number of Report Cases of COVID-19") +
+  # make the x axis more readable
+  scale_x_discrete(breaks = c("2020-01", "2021-01", "2022-01", "2023-01"))
+
+```
+Figure 1 shows the evolution of the number of COVID-19 related cases reported as the months and years pass. The most noticeable point about this figure is the high spike in cases in December 2021 and January 2022. By plotting the number of cases reported by month, I get a better grasp on the trends within a year. For example in 2021 the number of cases reported is slightly larger than the number of cases reported in 2022, but the 2021 segment of the graph is much more polarized and shows more variations than the 2022 segment. An interesting point to note would be that the number of cases reported in 2023 respects a consistent trend which suggests it will likely decrease or stagnate in 2024. 
+
+=> for future me: should this be put in results section and data explaining more why I did graph like this?
+
+```{r}
+#| echo: false
+#| message: false
+#| label: fig-cleaned_severity_data
+#| fig-cap: Number of hospitalization and ICU cases by month from 2020 to 2023 related to COVID-19 in Toronto
+
+# counts the number of hospitalization and ICU cases
+clean_severity_data <-
+  clean_covid_data |>
+  group_by(date) |>
+  summarize(
+    hospitalization = sum(hospitalized == "Yes"),
+    ICU = sum(icu == "Yes")
+  )
+
+# plots graph
+clean_severity_data |>
+  ggplot(aes(x = date, y = hospitalization, color = "Hospitalization")) +
+  # point graph for hospitalization
+  geom_point() +
+  # point graph for ICU
+  geom_point(aes(y = ICU, color = "ICU")) +
+  # neater theme
+  theme_minimal() +
+  # modify axis labels and legend title
+  labs(x = "Date", y = "Number of reported cases", colour = "Severity Variable") + 
+  # add legend
+  theme(legend.position = "bottom") +
+  # make the x axis more readable
+  scale_x_discrete(breaks = c("2020-01", "2021-01", "2022-01", "2023-01"))
+```
+
 
 # Results
 
