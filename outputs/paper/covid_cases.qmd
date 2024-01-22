@@ -71,6 +71,7 @@ head(clean_covid_data) |>
 
 Table 1 shows a sample of the cleaned data of COVID-19 cases. Each row represents a reported case of coronavirus disease in Toronto from January 2020 (2020-01 in the cleaned data) to December 2023 (2023-12 in the cleaned data). Data from 2024 was omitted, as the year is currently ongoing and not representative of the trends. From the raw data only the columns of interest were chosen to evaluate severity of each case. 
 
+\newpage
 
 ```{r}
 #| echo: false
@@ -100,6 +101,8 @@ clean_numbers_data |>
 
 ```
 Figure 1 shows the evolution of the number of COVID-19 related cases reported as the months and years pass. By plotting the number of cases reported by month, I get a better grasp on the trends within a year. For example in 2021 the number of cases reported is slightly larger than the number of cases reported in 2022, but the 2021 segment of the graph is much more polarized and shows more variations than the 2022 segment. For readability purposes the horizontal axis has been broken down to yearly labels instead of monthly labels.
+
+\newpage
 
 ```{r}
 #| echo: false
@@ -135,4 +138,5 @@ clean_severity_data |>
 
 Figure 2 shows the trends in the severity variables relative the the reported episode date. The horizontal axis is the reported episode date of the cases, consistent with the horizontal axis in Figure 1. Considering that the hospitalization of a patient is a intermediate step before sending them to the ICU, it is reasonable to merge both variables on the same figure. The data is consistent with this assumption as every data point representing a monthly hospitalization count is greater or equal to the corresponding data point representing the monthly ICU count. 
 
+\newpage
 # References
