@@ -39,7 +39,7 @@ tail(sim_data)
 
 #### Data testing ####
 
-# check if there are only 2 hospitalization possibilities
+# check there are only 2 hospitalization possibilities
 sim_data$hospitalization |>
   unique() |>
   length() == 2
@@ -48,7 +48,7 @@ sim_data$hospitalization |>
 sim_data$hospitalization |>
   unique() == c("Yes", "No")
 
-# check if there are only 2 icu possibilities
+# check there are only 2 icu possibilities
 sim_data$icu |>
   unique() |>
   length() == 2
