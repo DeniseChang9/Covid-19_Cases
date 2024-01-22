@@ -6,9 +6,9 @@
 # License: MIT
 
 #### Data Expectations ####
-# Episode date should be a valid date before today
-# ever_hospitalized should only take two possible values: 'yes' or 'no'
-# ever_in_icu should only take two possible values: 'yes' or 'no'
+# Episode date should be a valid date in YYYY-MM-DD format between in 2022
+# ever_hospitalized should only take two possible values: 'Yes' or 'No'
+# ever_in_icu should only take two possible values: 'Yes' or 'No'
 # Columns: episode_date, ever_hospitalized, ever_in_icu
 
 #### Workspace setup ####
@@ -16,8 +16,51 @@ library(tidyverse)
 
 #### Start simulation ####
 
-## Assumptions
+## Create simulated data
 
-# Fictional COVID-19 cases and related information
+set.seed(302) #random seed
 
+# simulate data for 1 year (365 days)
+sim_data <-
+  tibble(
+    date = rep(x = as.Date("2022-01-01") + c(0:364), times = 1),
+    hospitalization = sample(x = c("Yes", "No"),
+                             size = 365,
+                             replace = TRUE,
+                             prob = c(0.5, 0.5)),
+    icu = sample(x = c("Yes", "No"),
+                 size = 365,
+                 replace = TRUE,
+                 prob = c(0.5, 0.5)
+    ))
+
+tail(sim_data)
+
+
+#### Data testing ####
+
+# check if there are only 2 hospitalization possibilities
+sim_data$hospitalization |>
+  unique() |>
+  length() == 2
+
+# check the 2 hospitalization possibilities
+sim_data$hospitalization |>
+  unique() == c("Yes", "No")
+
+# check if there are only 2 icu possibilities
+sim_data$icu |>
+  unique() |>
+  length() == 2
+
+# check the 2 icu possibilities
+sim_data$icu |>
+  unique() == c("No", "Yes")
+
+# check the date range
+sim_data$date |>
+  min() == "2022-01-01"
+
+sim_data$date |>
+  max() == "2022-12-31"
 
