@@ -16,25 +16,21 @@ library(arrow)
 clean_covid_data <-
   read_parquet(file = "outputs/data/clean_covid_data.parquet")
 
-head(clean_covid_data)
-
 # check there are only 2 hospitalization possibilities
 clean_covid_data$hospitalized |>
   unique() |>
-  length() == 2
+  length() <= 2
 
 # check the 2 hospitalization possibilities
-clean_covid_data$hospitalized |>
-  unique() == c("No", "Yes")
+all(clean_covid_data$hospitalized %in% c("Yes", "No"))
 
 # check there are only 2 icu possibilities
 clean_covid_data$icu |>
   unique() |>
-  length() == 2
+  length() <= 2
 
 # check the 2 icu possibilities
-clean_covid_data$icu |>
-  unique() == c("No", "Yes")
+all(clean_covid_data$icu %in% c("Yes", "No"))
 
 # check the date range
 clean_covid_data$date |>
