@@ -4,16 +4,16 @@ author: "Denise Chang"
 thanks: "Code and data supporting this analysis are available at: https://github.com/DeniseChang9/Covid-19_Cases.git "
 date: today
 date-format: long
-abstract: "In 2020 the coronavirus disease caused worldwide panic due to its fast transmission rate and the health complications for its affected host. This study aims to investigate the trends in COVID-19 cases in the City of Toronto from 2020 to 2023, as well as the severity of each of these cases. Based on the exploration of the data, there is strong evidence support the hypothesis that the coronavirus disease is not as relevant today as it was during the peak of the pandemic. The results of this study is significant, as it impacts the future directions of COVID-19 regulations for businesses, schools and governmental institutions."
+abstract: "In 2020 the coronavirus disease caused worldwide panic due to its fast transmission rate and the health complications for its affected host. This study aims to investigate the trends in COVID-19 cases in the City of Toronto from 2020 to 2023, as well as the severity of each of these cases. Based on the exploration of the data, there is strong evidence to support the hypothesis that the coronavirus disease is not as relevant today as it was during the peak of the pandemic. The results of this study are significant, as they impact the future directions of COVID-19 regulations for businesses, schools and governmental institutions."
 format: pdf
 number-sections: true
 bibliography: references.bib
 ---
 
 # Introduction
-The coronavirus disease, also commonly referred to as COVID-19, is a contagious disease which first emerged in late 2019 [@PHO]. Due to the scale of the coronavirus outbreak and its rapid international transmission rate, the World's Health Organization (WHO) characterized it to be a global pandemic and a public health emergency of international on concern (PHEIC) on March 11th 2020 [@WHO]. This statement urged national leaders to begin formulating a response plan, including but not limited to masking restrictions and mandatory vaccination policies to limit the spread of the virus. However, in early 2022, despite the ongoing PHEIC, the province of Ontario announced they would lift all COVID-19 related regulations by the end of April 2022 [@CTV]. This announcement was welcomed with skepticism as the public was still not convinced about the safety of lifting these regulations [@CBC].
+The coronavirus disease, also commonly referred to as COVID-19, is a contagious disease that first emerged in late 2019 [@PHO]. Due to the scale of the coronavirus outbreak and its rapid international transmission rate, the World Health Organization (WHO) characterized it to be a global pandemic and a public health emergency of international concern (PHEIC) on March 11 2020 [@WHO]. This statement urged national leaders to begin formulating a response plan, including but not limited to masking restrictions and mandatory vaccination policies to limit the spread of the virus. However, in early 2022, despite the ongoing PHEIC, the province of Ontario announced they would lift all COVID-19-related regulations by the end of April 2022 [@CTV]. This announcement was welcomed with skepticism as the public was still not convinced about the safety of lifting these regulations [@CBC].
 
-One of the ways to evaluate the safety of lifting COVID-19 regulations as well as its effectiveness would be to look at the number of cases of COVID-19 and the severity of each case for the years surrounding the loosening of regulations. In this paper I take a particular interest in the data surrounding the reported cases of COVID-19 in the city of Toronto from 2020 to 2023. I estimate the transmission rate of the disease during the pandemic by evaluating the number of cases reported by month. The severity of each case is evaluated by compiling the number of patients who were hospitalized and sent to the intensive care unit (ICU) during their confirmed episode of sickness. I find that the number of reported COVID-19 cases were already decreasing by the time Ontario announced they would lift all COVID-19 related regulations, and that the cases kept decreasing after they were lifted. The severity of the cases temporarily stayed constant, before decreasing in the following year.
+One of the ways to evaluate the safety of lifting COVID-19 regulations as well as its effectiveness would be to look at the number of cases of COVID-19 and the severity of each case for the years surrounding the loosening of regulations. In this paper, I take particular interest in the data surrounding the reported cases of COVID-19 in the city of Toronto from 2020 to 2023. I estimate the transmission rate of the disease during the pandemic by evaluating the number of cases reported by month. The severity of each case is evaluated by compiling the number of patients who were hospitalized and sent to the intensive care unit (ICU) during their confirmed episode of sickness. I find that the number of reported COVID-19 cases was already decreasing by the time Ontario announced they would lift all COVID-19-related regulations and that the cases kept decreasing after they were lifted. The severity of the cases temporarily stayed constant, before decreasing in the following year.
 
 The next section of this paper discusses the data used for the analysis. This includes a discussion of the data collection and the data processing. A description of the variables of interest is also included in this section.
 
@@ -36,7 +36,7 @@ clean_covid_data <-
 
 
 # Data
-In this section I will present the acquisition method of the data, the variables of interest for this analysis as well as the method for data processing. 
+In this section, I will present the acquisition method of the data, the variables of interest for this analysis as well as the method for data processing. 
 
 ## Data Collection
 The data used in this paper is retrieved from the City of Toronto Open Data Portal through the R package `opendatatoronto` [@opendatatoronto]. The downloaded dataset is titled "COVID-19 Cases in Toronto". Starting from the first reported case in January 2020, the data uses 13 variables to capture demographic, geographic and severity information about the cases reported to and managed by Toronto Public Health. The data is extracted on a bi-weekly basis from the provincial Case & Contact Management System (CCM) to keep the reports accurate and relevant to the present.
@@ -44,13 +44,13 @@ The data used in this paper is retrieved from the City of Toronto Open Data Port
 The data used for this paper was retrieved on January 20 2024, and was last refreshed on January 17 2024. 
 
 ## Variables of Interest
-For this analysis the variables of interests are the number of reported COVID-19 cases in Toronto, the number of patients who had been hospitalized for a reason related to their sickness, and the number of patients who had been to the ICU for their sickness. These three variables are used to evaluate the transmission rate and the severity of the disease of each month of the studied years. 
+For this analysis, the variables of interest are the number of reported COVID-19 cases in Toronto, the number of patients who had been hospitalized for a reason related to their sickness, and the number of patients who had been to the ICU for their sickness. These three variables are used to evaluate the transmission rate and the severity of the disease in each month of the studied years. 
 
 To evaluate the transmission rate of the virus, the variable of interest I compiled is the number of reported cases of COVID-19 per month from January 2020 to December 2023. This variable captures both confirmed cases and probable cases due to reasonable suspicion. 
 
-To estimate the severity of the cases, I am interested in the number of confirmed patients who has been hospitalized for reasons related to the coronavirus disease and the number of patients who were admitted to the ICU for the same reasons. Both of these variables include those who are currently hospitalized, those who have been discharged and those who are deceased. 
+To estimate the severity of the cases, I am interested in the number of confirmed patients who have been hospitalized for reasons related to the coronavirus disease and the number of patients who were admitted to the ICU for the same reasons. Both of these variables include those who are currently hospitalized, those who have been discharged and those who are deceased. 
 
-Another possible variable from the same dataset that could have been used to estimate the severity of the reported cases is the number of patients have has been intubated during their episode. This variable was not considered for this analysis because intubation is a mandatory step for patients sent to the ICU. As this variable is already captured by another variable of interest, it was omitted for the purpose of this paper.  
+Another possible variable from the same dataset that could have been used to estimate the severity of the reported cases is the number of patients who have been intubated during their episode. This variable was not considered for this analysis because intubation is a mandatory step for patients sent to the ICU. As this variable is already captured by another variable of interest, it was omitted for this paper.  
 
 ## Data Processing
 The data was cleaned and processed using the statistical programming language R [@R]. Statistical libraries such as `tidyverse` [@tidyverse], `opendatatoronto` [@opendatatoronto], `arrow` [@arrow], `janitor` [@janitor], `knitr` [@knitr] and `here` [@here] are leveraged in the data processing as well. 
@@ -69,7 +69,7 @@ head(clean_covid_data) |>
   )
 ```
 
-Table 1 shows a sample of the cleaned data of COVID-19 cases. Each row represents a reported case of coronavirus disease in Toronto from January 2020 (2020-01 in the cleaned data) to December 2023 (2023-12 in the cleaned data). Data from 2024 was omitted, as the year is currently ongoing and not representative of the trends. From the raw data only the columns of interest were chosen to evaluate severity of each case. 
+Table 1 shows a sample of the cleaned data of COVID-19 cases. Each row represents a reported case of coronavirus disease in Toronto from January 2020 (2020-01 in the cleaned data) to December 2023 (2023-12 in the cleaned data). Data from 2024 was omitted, as the year is currently ongoing and not representative of the trends. From the raw data, only the columns of interest were chosen to evaluate the severity of each case. 
 
 \newpage
 
@@ -95,12 +95,12 @@ clean_numbers_data |>
   # rename axis
   labs(
     x = "Date (YYYY-MM)", 
-    y = "Number of Report Cases of COVID-19") +
+    y = "Number of Reported Cases") +
   # make the x axis more readable
   scale_x_discrete(breaks = c("2020-01", "2021-01", "2022-01", "2023-01"))
 
 ```
-Figure 1 shows the evolution of the number of COVID-19 related cases reported relative to the date of episode. By plotting the number of cases reported by month, I get a better grasp on the trends within a year. For example in 2021 the number of cases reported is slightly larger than the number of cases reported in 2022, but the 2021 segment of the graph is much more polarized and shows more variations than the 2022 segment. For readability purposes the horizontal axis has been broken down to yearly labels instead of monthly labels.
+Figure 1 shows the evolution of the number of COVID-19-related cases reported relative to the date of infection. By plotting the number of cases reported by month, I get a better grasp on the trends within a year. For example in 2021 the number of cases reported is slightly larger than the number of cases reported in 2022, but the 2021 segment of the graph is much more polarized and shows more variations than the 2022 segment. For readability purposes, the horizontal axis has been broken down into yearly labels instead of monthly labels.
 
 \newpage
 
@@ -129,14 +129,14 @@ clean_severity_data |>
   # neater theme
   theme_minimal() +
   # modify axis labels and legend title
-  labs(x = "Date (YYYY-MM)", y = "Number of reported cases", colour = "Severity Variable") + 
+  labs(x = "Date (YYYY-MM)", y = "Number of Reported Cases", colour = "Severity Variable") + 
   # add legend
   theme(legend.position = "bottom") +
   # make the x axis more readable
   scale_x_discrete(breaks = c("2020-01", "2021-01", "2022-01", "2023-01"))
 ```
 
-Figure 2 shows the trends in the severity variables relative to the reported episode date. The horizontal axis is the reported episode date of the cases, consistent with the horizontal axis in Figure 1. Considering that the hospitalization of a patient is an intermediate step before sending them to the ICU, it is reasonable to merge both variables on the same figure. The data is consistent with this assumption as every  monthly hospitalization count is greater or equal to the corresponding monthly ICU count. 
+Figure 2 shows the trends in the severity variables relative to the reported episode date. The horizontal axis is the reported episode date of the cases, consistent with the horizontal axis in Figure 1. Considering that the hospitalization of a patient is an intermediate step before sending them to the ICU, it is reasonable to merge both variables on the same figure. The data is consistent with this assumption as every monthly hospitalization count is greater or equal to the corresponding monthly ICU count. 
 
 \newpage
 # References
