@@ -6,7 +6,7 @@
 # License: MIT
 
 #### Data Expectations ####
-# Episode date should be a valid date in YYYY-MM-DD format between in 2022
+# Episode date should be a valid date in YYYY-MM-DD format
 # ever_hospitalized should only take two possible values: 'Yes' or 'No'
 # ever_in_icu should only take two possible values: 'Yes' or 'No'
 # Columns: episode_date, ever_hospitalized, ever_in_icu
@@ -33,9 +33,6 @@ sim_data <-
                  replace = TRUE,
                  prob = c(0.5, 0.5)
     ))
-
-tail(sim_data)
-
 
 #### Data testing ####
 
