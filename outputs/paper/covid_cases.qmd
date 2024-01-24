@@ -4,7 +4,7 @@ author: "Denise Chang"
 thanks: "Code and data supporting this analysis are available at: https://github.com/DeniseChang9/Covid-19_Cases.git "
 date: today
 date-format: long
-abstract: "In 2020 the coronavirus disease caused worldwide panic due to its fast transmission rate and the health complications for its affected host. This study aims to investigate the trends in COVID-19 cases in the City of Toronto from 2020 to 2023, as well as the severity of each of these cases. Based on the exploration of the data, there is strong evidence to support the hypothesis that the coronavirus disease is not as relevant today as it was during the peak of the pandemic. The results of this study are significant, as they impact the future directions of COVID-19 regulations for businesses, schools and governmental institutions."
+abstract: "In 2020 the coronavirus disease caused worldwide panic due to its fast transmission rate and the health complications for its affected host. This study aims to investigate the trends in COVID-19 cases in the City of Toronto from 2020 to 2023, as well as the severity of each of these cases. Based on the exploration of the data, there is strong evidence to support the hypothesis that the coronavirus disease is not as relevant today as it was during the peak of the pandemic suggesting the safety of lifting related regulations. The results of this study are significant, as they impact the future directions of COVID-19 regulations for businesses, schools and governmental institutions."
 format: pdf
 number-sections: true
 bibliography: references.bib
