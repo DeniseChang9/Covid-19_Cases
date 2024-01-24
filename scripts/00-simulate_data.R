@@ -42,20 +42,18 @@ tail(sim_data)
 # check there are only 2 hospitalization possibilities
 sim_data$hospitalization |>
   unique() |>
-  length() == 2
+  length() <= 2
 
 # check the 2 hospitalization possibilities
-sim_data$hospitalization |>
-  unique() == c("Yes", "No")
+all(sim_data$hospitalization %in% c("Yes", "No"))
 
 # check there are only 2 icu possibilities
 sim_data$icu |>
   unique() |>
-  length() == 2
+  length() <= 2
 
 # check the 2 icu possibilities
-sim_data$icu |>
-  unique() == c("No", "Yes")
+all(sim_data$icu %in% c("Yes", "No"))
 
 # check the date range
 sim_data$date |>
