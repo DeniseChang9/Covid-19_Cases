@@ -25,7 +25,7 @@ clean_covid_data <-
   # select columns of interest
   select(episode_date, ever_hospitalized, ever_in_icu) |>
   # keeps year and month of cases
-  mutate(episode_date = str_sub(episode_date, start = 1, end = 7)) |>
+  mutate(episode_date = format(as.Date(episode_date), "%Y-%m")) |>
   # remove any 2024 data
   filter(episode_date <= "2023-12") |>
   # rename column headings
