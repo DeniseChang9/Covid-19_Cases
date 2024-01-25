@@ -1,7 +1,7 @@
 # Analysis of COVID-19 Cases in Toronto
 
 ## Overview
-This paper analyzes the evolution of reported COVID-19 cases in Toronto from 2020 to 2023. Explicitly, it explores the number of reported cases, the number of hospitalizations and the number of cases sent to the ICU per month for further insights on the transmission rate and the severity of the coronavirus disease in a given time period.
+This paper analyzes the evolution of reported COVID-19 cases in Toronto from 2020 to 2023. Explicitly, it explores the number of reported cases, the number of hospitalizations and the number of cases sent to the ICU per month for further insights on the transmission rate and the severity of the coronavirus disease in the given time period.
 
 ## File Structure
 The repository is structured as follow:
